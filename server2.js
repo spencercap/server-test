@@ -1,8 +1,8 @@
 
-var port = 3011;
+var port = 40513;
 
 var ioc = require( 'socket.io-client' );
-var client = ioc.connect( "http://localhost:" + port );
+var client = ioc.connect( "https://serverrr.herokuapp.com:" + port );
 
 client.once( "connect", function () {
     console.log( 'Client: Connected to port ' + port );

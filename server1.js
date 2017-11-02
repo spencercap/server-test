@@ -21,11 +21,17 @@ app.get('/', function (req, res) {
 });
 
 
-var io = require( 'socket.io' ).listen( server ).set( "log level", 0 );
+var io = require( 'socket.io' ).listen( server );
 
 io.sockets.on( "connection", function ( socket ) {
+
     console.log( 'Server: Incoming connection.' );
+
     socket.on( "echo", function ( msg, callback ) {
-        callback( msg );
+        console.log('tried sending message from server1');
+
+        io.sockets.emit('bounce', {my: 'data'}); // send to client socket
+        // callback( msg );
     } );
+
 } );

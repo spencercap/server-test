@@ -1,5 +1,5 @@
 
-var port = 31896;
+var port = 3011;
 
 var ioc = require( 'socket.io-client' );
 var client = ioc.connect( "http://localhost:" + port );
@@ -12,4 +12,10 @@ client.once( "connect", function () {
         // client.disconnect();
         // server.close();
     } );
+
+    client.on('bounce', function (data) {
+      console.log(data);
+    });
+
+
 } );

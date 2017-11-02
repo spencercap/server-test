@@ -1,5 +1,5 @@
 
-var port = 3011;
+var port = 31896;
 
 var ioc = require( 'socket.io-client' );
 var client = ioc.connect( "http://localhost:" + port );

@@ -7,8 +7,7 @@ stopWords = set(stopwords.words('english'))
 import re
 
 # TODO take out words w/out vowels (lose acryonyms)
-## TODO create some functions/filters we can implement live to stop spamming / mis-use 
-
+## TODO create some functions/filters we can implement live to stop spamming / mis-use
 
 sentence = "this is a random sentence with some nonsense ksdjfhlaskjdhfls... ? ! @"
 

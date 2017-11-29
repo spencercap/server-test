@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Spencer Cappiello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+    </style>
+
+    <!-- scripts -->
+    <!-- <script src="rita-full.js" type="text/javascript"></script> -->
+
+</head>
+<body>
+
+    <div class="main" p-view="main"></div>
+
+    <script>
+
+    window.speechSynthesis.onvoiceschanged = function() {
+
+        var synth = window.speechSynthesis;
+
+        var sentence = 'Hello World';
+        var utterThis = new SpeechSynthesisUtterance(sentence);
+        utterThis.text = 'Changed ya';
+        synth.speak(utterThis);
+
+        // can do this too
+        // utterThis.volume = 1.0;
+        // utterThis.rate   = 1.0;
+        // utterThis.pitch  = 1.0;
+
+
+        var voices = window.speechSynthesis.getVoices();
+        console.log(voices);
+
+        var voicesToUse = ['Tom', 'Alice'];
+
+        // for (i in allVoices) {
+        //   utterThis.voice = allVoices[i];
+        //   synth.speak(utterThis);
+        // }
+
+        for (i = 0; i < voices.length; i++) {
+
+          console.log(voices[i]);
+
+          console.log(voices.filter( function(voice) { console.log(voice.name == 'Alice'); return voice.name == 'Alice';})[0];);
+
+          utterThis.voice = voices.filter( function(voice) {
+            return voice.name == 'Alice';
+          })[0];
+
+          // utterThis.voice = allVoices[i];
+          // utterThis.voice = 'Yuri';
+
+          synth.speak(utterThis);
+
+        }
+
+
+
+
+    };
+
+
+
+    </script>
+
+</body>
+</html>
